@@ -2,40 +2,28 @@ import React, { useState, useRef } from 'react';
 import './App.css';
 
 function App() {
-const others = [
-  '230001K', '230002N', '230003T', '230004X', '230005C',
-  '230006F', '230007J', '230008M', '230009R', '230010L',
-  // '230011P', '230012U', '230013A', '230014D', '230015G',
-  '230016K', '230017N', '230018T', '230019X', '230020R',
-  '230021V', '230022B', '230023E', '230024H', '230025L',
-  '230026P', '230027U', '230028A', '230029D', '230030X',
-  // '230031C', '230032F', '230033J', '230034M', '230035R',
-  '230036V', '230037B', '230038E', '230039H', '230040D',
-  '230041G', '230042K', '230043N', '230044T', '230045X',
-  // '230046C', '230047F', '230048J', '230049M', '230050H',
-  '230051L', '230052P', '230053U', '230054A', '230055D',
-  // '230056G', '230057K', '230058N', '230059T', '230060M',
-  '230061R', '230062V', '230063B', '230064E', '230065H',
-  '230066L', '230067P', '230068U', '230069A', '230070T',
-  // '230071X', '230072C', '230073F', '230074J', '230075M',
-  // '230076R', '230077V', '230078B', '230079E', '230080A',
-  '230081D', '230082G'
-];
+  const others = [ // add other random indexes here
+    '230657B', '230658E', '230659H', '230660D', '230661G',
+    // '230662K', '230663N', '230664T', '230665X', '230666C',
+    '230577E', '230580G', '230581K', '230582N', '230584X',
+    '230605P', '230609G', '230612J', '230613M', '230614R',
+    '230621K', '230622N', '230624X', '230626F', '230627J',
+    '230629R', '230636K', '230638T', '230640R', '230642B',
+    '230651C', '230653J', '230655R', '230656V'
+  ];
 
-const evenIndexes = [
-  '230010L', '230026P', '230028A', '230030X', '230038E',
-  '230054A', '230068U'
-];
-
-const oddIndexes = [
-  '230027U', '230041G', '230045X', '230069A', '230079E'
-];
+  const evenIndexes = [
+    '230564L', //add the even index here
+  ];
+  const oddIndexes = [
+    '230515N', //add the odd index here
+  ];
 
 const tempOthers = others.filter((item) => !evenIndexes.includes(item) && !oddIndexes.includes(item));
 // console.log(tempOthers);
 const numbers = tempOthers.concat(evenIndexes, oddIndexes);
 
-const flag = 1; // set for 1 for odd and 0 for even
+const flag = 0; // set for 1 for odd and 0 for even
 const targetIndexRef = useRef(null);
 
 if (targetIndexRef.current === null) {
